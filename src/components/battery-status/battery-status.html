@@ -1,0 +1,18 @@
+<div style="width: fit-content">
+  <span>
+      <img src="./assets/imgs/common-icons/battery-dark.png"/>
+      <div class="battery-level-show">
+         <p
+           [style.width]="battery_level+'%'"
+           [ngClass]="{'battery-low': battery_level<=33,'battery-mid': battery_level>33&& battery_level<66,'battery-high': battery_level>=66}"
+         ></p>
+      </div>
+      <p class="battery-percentage"
+         [ngClass]="{'battery-low-text':
+         battery_level<=33,'battery-mid-text':
+         battery_level>33&& battery_level<66,
+         'battery-high-text': battery_level>=66}">
+         {{battery_level}} %
+      </p>
+  </span>
+</div>

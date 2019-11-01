@@ -1,0 +1,100 @@
+@import "../../assets/css/common-style";
+
+app-login{
+  ion-input {
+    background-color: transparent;
+    border: 0px ;
+  }
+  .login-logo{
+    height: 14vh;
+    width: 14vh;
+    margin: auto;
+    display: block;
+
+  }
+  .login-input{
+
+    color: white;
+    .item-inner{
+      .input-wrapper{
+        ion-label{
+          text-align: right;
+          margin-right: 0;
+          color: $mito-orange-clr;
+        }
+        ion-input{
+          border-bottom: 1px solid $mito-orange-clr;
+          input{
+            font-family: tw-regular;
+            margin: 0px;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .user-name{
+    margin-top: 10%;
+  }
+  .sign-in-button{
+
+      background-color: $mito-orange-clr!important;
+      color: $dark-background!important;
+      width: 60%;
+  }
+  .login-logo-base{
+    .item-inner {
+      border-bottom: 0px solid !important;
+    }
+  }
+  .forget-password{
+
+    .item-inner{
+      border-bottom: 0px solid!important;
+      .input-wrapper{
+        ion-label{
+
+          color: $mito-orange-clr;
+        }
+      }
+    }
+    ion-label{
+      text-align: center;
+      color: $mito-orange-clr;
+    }
+  }
+  .item.item-md .checkbox-md{
+    margin-right: 0px;
+  }
+  .remember-me{
+  direction: rtl;
+
+    .item-inner{
+      border-bottom: 0px solid!important;
+      .input-wrapper{
+        ion-label{
+          color: $mito-orange-clr;
+        }
+      }
+    }
+  }
+  .item-md{
+    background-color: rgba(17, 17, 17, 0);
+  }
+  ion-item{
+    .item-inner{
+      .input-wrapper{
+        ion-label{
+          color: $mito-orange-clr;
+        }
+      }
+    }
+  }
+  .login-bg {
+    background-image: url("../../assets/imgs/login/login-back-3.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

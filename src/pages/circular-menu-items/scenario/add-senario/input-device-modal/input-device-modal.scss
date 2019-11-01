@@ -1,0 +1,35 @@
+@import "../../../../../assets/css/common-style";
+
+page-input-device-modal {
+  .auto-input-device{
+    height: 70vh;
+    overflow-y: auto;
+    margin-bottom:5vh;
+  }
+  .card-md p {
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: $mito-orange-clr;
+    margin: 1vh 0 2px;
+    text-align: right;
+  }
+  .waat{
+    float: left;
+    font-family: tw-regular;
+    margin-top: 3vh;
+  }
+  .card-md h3{
+    color: $light;
+    font-size: 1.4rem;
+  }
+  .save-cancel-box{
+    margin-bottom: 1vh;
+  }
+  .device{
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+    border-bottom: 1px solid $input-border;
+    border-top: 1px solid $input-border;
+  }
+}

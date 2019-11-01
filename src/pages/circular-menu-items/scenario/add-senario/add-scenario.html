@@ -1,0 +1,146 @@
+<ion-content>
+    <form>
+    <ion-stepper #stepper (selectIndexChange)="selectChange($event)" [mode]="'horizontal'">
+        <ion-step description="Step1 description">
+            <h3 class="step-header">انتخاب نحوه اجرای سناریو</h3>
+            <ion-row class="box-border scenario-name" >
+                <ion-col>
+                    <ion-input [(ngModel)]="scenario.name" name="name"  type="text" placeholder='نام سناریو'></ion-input>
+                </ion-col>
+            </ion-row>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class=" col-2 ">
+                    <ion-card class="mode-item float-left" (click)="changeMode(0)">
+                        <i class="fa fa-th-large" [ngClass]="{'selected-mode':modes[0]}"></i>
+                    </ion-card>
+                </div>
+                <div class=" col-2 ">
+                    <ion-card class="mode-item float-left" (click)="changeMode(4)">
+                        <i class="fa fa-plane" [ngClass]="{'selected-mode':modes[4]}"></i>
+                    </ion-card>
+                </div>
+                <div class=" col-2 ">
+                    <ion-card class="mode-item float-left" (click)="changeMode(2)">
+                        <i class="fa fa-car" [ngClass]="{'selected-mode':modes[2]}"></i>
+                    </ion-card>
+                </div>
+                <div class=" col-2 ">
+                    <ion-card class="mode-item float-left" (click)="changeMode(3)">
+                        <i class="fa fa-bed" [ngClass]="{'selected-mode':modes[3]}"></i>
+                    </ion-card>
+                </div>
+                <div class=" col-2 ">
+                    <ion-card class="mode-item float-left" (click)="changeMode(1)">
+                        <i class="fa fa-home " [ngClass]="{'selected-mode':modes[1]}"></i>
+                    </ion-card>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row">
+                <div class=" col-4 ">
+                    <ion-card class="execute-mode-item float-left" (click)="changeExecuteMode('auto')">
+                        <i class="fa fa-magic" [ngClass]="{'selected-mode':executeMode=='auto'}"></i>
+                    </ion-card>
+                </div>
+                <div class=" col-4 ">
+                    <ion-card class="execute-mode-item float-left" (click)="changeExecuteMode('scheduled')">
+                        <i class="fa fa-calendar" [ngClass]="{'selected-mode':executeMode=='scheduled'}"></i>
+                    </ion-card>
+                </div>
+                <div class=" col-4 ">
+                    <ion-card class="execute-mode-item float-left" (click)="changeExecuteMode('manual')">
+                        <i class="fa fa-user " [ngClass]="{'selected-mode':executeMode=='manual'}"></i>
+                    </ion-card>
+                </div>
+            </div>
+            <hr>
+            <div *ngIf="executeMode=='scheduled'">
+                <ion-row class="radio-btns" radio-group [(ngModel)]="selectedDuration " name="selectedDuration">
+                    <ion-col *ngFor="let duration of dataMapService.durations">
+                        <ion-label>{{duration.name}}</ion-label>
+                        <ion-radio [value]="duration.name"></ion-radio>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="box-border" *ngIf="selectedDuration=='تکرار'">
+                    <ion-col>
+                        <ion-select [(ngModel)]="selectedIntervalLoop" name="loop" interface="action-sheet">
+                            <ion-option *ngFor="let loop of dataMapService.intervalLoop" [value]="loop.code">{{loop.name}}</ion-option>
+                        </ion-select>
+                    </ion-col>
+                    <ion-col>
+                        <ion-input type="number" name="interval" [(ngModel)]="scenarioTimerT.interval" placeholder='زمان تکرار'></ion-input>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="box-border" *ngIf="selectedDuration=='روزانه'">
+                    <ion-col>
+                        <input name="time" [(ngModel)]="scenarioTimerT.time" class="tw-font" type="time" placeholder='00:00:AM'>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="box-border" *ngIf="selectedDuration=='هفتگی'">
+                    <div class="row">
+                        <div *ngFor="let day of weekDays;let i=index" class="col-3">
+                            <button type="button" class="button-not-selected " [ngClass]="{'button-selected':day.isActive}"
+                                    (click)="weekDaysSelect(i)">{{day.name}}
+                            </button>
+                        </div>
+                    </div>
+                    <ion-col>
+                        <input class="tw-font" name="timeW" [(ngModel)]="scenarioTimerT.time" type="time" placeholder='00:00:AM'>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="box-border" *ngIf="selectedDuration=='ماهانه'">
+                    <div class="row">
+                        <div *ngFor="let day of monthDays;let i=index" class="col-2">
+                            <button type="button" class="button-not-selected tw-font" [ngClass]="{'button-selected':day.isActive}"
+                                    (click)="monthDaysSelect(i)">{{day.name}}
+                            </button>
+                        </div>
+                    </div>
+                    <ion-col>
+                        <input class="tw-font" name="timeM" [(ngModel)]="scenarioTimerT.time" type="time" placeholder='00:00:AM'>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <i *ngIf="scenario.name!=''" ionicStepperNext class="fa fa-chevron-circle-right next-arrow" ></i>
+        </ion-step>
+        <ion-step description="Step1 description" *ngIf="executeMode=='auto'">
+            <div >
+                <h3 class="step-header">انتخاب دستگاه های ورودی</h3>
+                <ion-content class="auto-input-device">
+
+                    <ion-list *ngFor="let device of localData.veraMainData.devices| deviceFilter">
+                        <a ion-item (click)="openModal(device)">
+                           <span class="light-color device-name" [ngClass]="{'success-color':isInputDeviceSelected(device.id),'warning-color':!isInputDeviceSelected(device.id)}">
+                               {{'devices.'+device.name.substr(0,3)|translate}}{{device.name.substr(device.name.indexOf('_'),device.name.length)}}
+                           </span>
+                            <i class="fa fa-2x fa-angle-right pull-right " [ngClass]="{'success-color':isInputDeviceSelected(device.id),'warning-color':!isInputDeviceSelected(device.id)}"></i>
+                        </a>
+                    </ion-list>
+
+                </ion-content>
+
+            </div>
+            <i ionicStepperNext class="fa fa-chevron-circle-right next-arrow"></i>
+            <i ionicStepperPrevious class="fa fa-chevron-circle-left previous-arrow"></i>
+        </ion-step>
+        <ion-step description="Step1 description">
+
+                <h3 class="step-header">انتخاب دستگاه های خروجی</h3>
+                <ion-content class="output-device auto-input-device">
+                    <ion-list>
+                        <ion-item *ngFor="let outputDevice of outputDevicesTemp;let i=index">
+                            <ion-label class="pull-left">{{outputDevice.name}}</ion-label>
+                            <ion-checkbox [name]="'isUsed'+i" [(ngModel)]="outputDevice.is_used"></ion-checkbox>
+                            <ion-toggle class="pull-right" [(ngModel)]="outputDevice.is_active" [disabled]="!outputDevice.is_used"
+                                        [name]="'activate'+i"></ion-toggle>
+                        </ion-item>
+                    </ion-list>
+                </ion-content>
+            <i *ngIf="isActionActive()" class="fa fa-save next-arrow success-color" (click)="addUpdateScenario()"></i>
+            <i ionicStepperPrevious class="fa fa-chevron-circle-left previous-arrow"></i>
+        </ion-step>
+    </ion-stepper>
+    </form>
+</ion-content>
+

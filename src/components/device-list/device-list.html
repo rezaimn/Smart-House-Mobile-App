@@ -1,0 +1,93 @@
+
+  <form>
+    <div class="row card-container">
+
+      <ion-card class="col-lg-4 col-md-6 col-sm-6 col-xs-12 "
+                *ngFor="let device of deviceList| deviceFilter">
+        <ion-icon name="heart"></ion-icon>
+        <ion-card-header class="row">
+          <div class="col-9">
+            <p class="card-name">
+              {{'rooms.'+(localData?.veraMainData?.rooms|getRoomById:device.room)[0]?.name.substr(0,(localData?.veraMainData?.rooms|getRoomById:device.room)[0]?.name.indexOf('_'))|translate}}
+              {{(localData?.veraMainData?.rooms|getRoomById:device.room)[0]?.name.substr((localData?.veraMainData?.rooms|getRoomById:device.room)[0]?.name.indexOf('_'),(localData?.veraMainData?.rooms|getRoomById:device.room)[0]?.name?.length)}}
+            </p>
+          </div>
+          <div class="col-3 float-right">
+            <battery-status *ngIf="device.batterylevel" class="float-right" [battery_level]="converterService.stringToIntConventor(device?.batterylevel)"></battery-status>
+            <i class="fa fa-arrow-circle-right warning-color plug-appliances" (click)="addApplianceToPlug(device)" *ngIf="device.name.startsWith('SPD')"></i>
+          </div>
+        </ion-card-header>
+        <div class="card-header-data">
+          <ion-card-content class="row">
+            <ion-avatar item-start>
+              <i class="device-icon" [ngClass]="device?.icon" [style.color]="(device?.status==1||device?.armed==1)?'#f9961e':
+              (device.name.startsWith('TRM')&&device?.mode=='AutoChangeOver')?'#f9961e':
+              (device.name.startsWith('TRM')&&device?.mode=='CoolOn')?'#3a70cf':
+              (device.name.startsWith('TRM')&&device?.mode=='HeatOn')?'#e25308':'#f4f4f4'" ></i>
+              <p class="device-name">
+                {{'devices.'+device.name.substr(0,3)|translate}}{{device.name.substr(device.name.indexOf('_'),device.name.length)}}</p>
+            </ion-avatar>
+            <div class="col-12 toggle-base"
+                 *ngIf="device.name.startsWith('SPD')||
+                 device.name.startsWith('LTN')||
+                 device.name.startsWith('SRN')">
+              <div class="col-9 float-left"  >
+                <ion-label *ngIf="device.status==1" class="toggle-label" name="toggle-label">روشن</ion-label>
+                <ion-label *ngIf="device.status!=1" class="toggle-label" name="toggle-label">خاموش</ion-label>
+              </div>
+              <div class="col-3 float-right">
+                <ion-toggle [checked]="device.status==1" (ionChange)="switchOnAndSwitchOffDevices(device)"></ion-toggle>
+              </div>
+            </div>
+            <div class="col-12 toggle-base"
+                 *ngIf="device.name.startsWith('WLS')||
+                 device.name.startsWith('SDS')||
+                 device.name.startsWith('DWS')||
+                 device.name.startsWith('ACD')||
+                 device.name.startsWith('GBS')||
+                 device.name.startsWith('MDS')||
+                 device.name.startsWith('CMR')||
+                 device.name.startsWith('PKS')">
+              <div class="col-9 float-left">
+                <ion-label *ngIf="device.armed==1"  class="toggle-label" name="toggle-label" >فعال</ion-label>
+                <ion-label *ngIf="device.armed!=1" class="toggle-label" name="toggle-label">غیر فعال</ion-label>
+              </div>
+              <div class="col-3 float-right">
+                <ion-toggle [checked]="device.armed==1" (ionChange)="armAndDisarmDevices(device)"></ion-toggle>
+              </div>
+            </div>
+            <div class="col-12 themp-range" *ngIf="device.name.startsWith('TRM')">
+              <p class="text-center centigrade"><strong class="themp-value">{{device.setpoint}} </strong>ºC</p>
+              <ion-range [snaps]="1000"
+                         min="15"
+                         max="35"
+                         step="1"
+                         snaps="true"
+                         [(ngModel)]="device.setpoint"
+                         [disabled]="device.mode=='Off'"
+                         (onFinish)="SetThemprature(device)"
+                         color="danger" name="thermostat">
+                <i range-left small class="primary-color fa fa-thermometer-empty thermostat-font"></i>
+                <i range-right class="danger-color fa fa-thermometer-full thermostat-font"></i>
+              </ion-range>
+            </div>
+          </ion-card-content>
+          <div class="row modes" *ngIf="device.name.startsWith('TRM')">
+            <div class="col-3">
+              <button ion-button class="thermostat-modes " [ngClass]="{'thermostat-selected-mode':device.mode=='Off'}" (click)="setMode(device,'Off')">Off</button>
+            </div>
+            <div class="col-3">
+              <button ion-button class="thermostat-modes" [ngClass]="{'thermostat-selected-mode':device.mode=='AutoChangeOver'}" (click)="setMode(device,'AutoChangeOver')">Auto</button>
+            </div>
+            <div class="col-3">
+              <button ion-button class="thermostat-modes" [ngClass]="{'thermostat-selected-mode':device.mode=='CoolOn'}" (click)="setMode(device,'CoolOn')">Cool</button>
+            </div>
+            <div class="col-3">
+              <button ion-button class="thermostat-modes" [ngClass]="{'thermostat-selected-mode':device.mode=='HeatOn'}" (click)="setMode(device,'HeatOn')">Heat</button>
+            </div>
+          </div>
+        </div>
+      </ion-card>
+    </div>
+  </form>
+

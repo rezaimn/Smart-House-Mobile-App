@@ -1,0 +1,47 @@
+
+
+<ion-content  >
+  <ion-slides pager="true" [autoplay]="4000" [effect]="coverflow" [loop]="true"  >
+    <ion-slide class="security">
+      <p class="slide-title">وضعیت امنیت</p>
+      <ion-chip>
+        <ion-avatar>
+          <img *ngIf="localData.notificationsCount==0" src="./assets/imgs/circular-tabs/home/home-safe-dark.png">
+          <img *ngIf="localData.notificationsCount>0" src="./assets/imgs/circular-tabs/home/home-unsafe-dark.png">
+        </ion-avatar>
+      </ion-chip>
+      <ion-chip>
+        <p class="slide-text" *ngIf="localData.notificationsCount>0"><strong>{{localData.notificationsCount}}</strong> اعلان دیده نشده وجود دارد.</p>
+        <p class="slide-text" *ngIf="localData.notificationsCount==0">اعلان جدیدی برای نمایش وجود ندارد.</p>
+      </ion-chip>
+    </ion-slide>
+    <ion-slide class="device-status">
+      <p class="slide-title">وضعیت دستگاه ها</p>
+      <div class="row">
+        <div class="battery-status col-6">
+          <ion-avatar>
+            <img *ngIf="localData.batteryLowDevicesCount>0" src="./assets/imgs/circular-tabs/home/battery-low-dark.png">
+            <img *ngIf="localData.batteryLowDevicesCount==0" src="./assets/imgs/circular-tabs/home/battery-high-dark.png">
+          </ion-avatar>
+
+          <p *ngIf="localData.batteryLowDevicesCount>0" class="slide-text"><strong>{{localData.batteryLowDevicesCount}}</strong> دستگاه باتری ضعیفی دارند.</p>
+          <p *ngIf="localData.batteryLowDevicesCount==0" class="slide-text">باتری همه دستگاه ها به میزان کافی شارژ دارند.</p>
+        </div>
+        <div class="out-of-service col-6">
+          <ion-avatar>
+            <img *ngIf="localData.outOfServiceDevicesCount>0" src="./assets/imgs/circular-tabs/home/devices-dark-out-of-service.png">
+            <img *ngIf="localData.outOfServiceDevicesCount==0" src="./assets/imgs/circular-tabs/home/devices-in-service-dark.png">
+          </ion-avatar>
+          <p class="slide-text"  *ngIf="localData.outOfServiceDevicesCount>0"><strong>{{localData.outOfServiceDevicesCount}}</strong> دستگاه خارج از سرویس هستند.</p>
+          <p class="slide-text"  *ngIf="localData.outOfServiceDevicesCount==0">همه دستگاه ها در حال سرویس دهی هستند.</p>
+        </div>
+      </div>
+
+    </ion-slide>
+    <!--<ion-slide class="energy">-->
+      <!--<h1>Slide 3</h1>-->
+    <!--</ion-slide>-->
+  </ion-slides>
+
+<device-list [deviceList]="mostUsedDeviceList"></device-list>
+</ion-content>

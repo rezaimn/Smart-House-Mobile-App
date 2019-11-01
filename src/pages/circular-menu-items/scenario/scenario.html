@@ -1,0 +1,31 @@
+<ion-content>
+    <i class="fa fa-plus-circle add-scenario" (click)="addEditScenario(null)"></i>
+    <ion-card *ngFor="let scen of scenarios;let i=index">
+        <ion-card-header>
+            <ion-card-title>
+                {{scen.name}}
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <div class="row">
+                <div class="col-6">
+                    <p class="content-title">نحوه اجرا</p>
+                    <p class="content-text" *ngIf="scen.triggers.length>0">اتوماتیک</p>
+                    <p class="content-text" *ngIf="scen.timers>0">زمانبندی شده</p>
+                    <p class="content-text" *ngIf="scen.triggers.length==0&&scen.timers==0">دستی</p>
+
+                </div>
+                <div class="col-2 ">
+                    <i class="fa fa-play-circle success-color scenario-edit" (click)="playScenario(scen)"></i>
+                </div>
+                <div class="col-2 ">
+                    <i class="fa fa-edit primary-color scenario-edit" (click)="addEditScenario(scen)"></i>
+                </div>
+                <div class="col-2">
+                    <i class="fa fa-remove danger-color scenario-delete" (click)="deleteScenario(scen)"></i>
+                </div>
+            </div>
+        </ion-card-content>
+
+    </ion-card>
+</ion-content>

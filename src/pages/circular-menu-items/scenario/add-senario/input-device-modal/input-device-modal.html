@@ -1,0 +1,54 @@
+<ion-content>
+    <ion-header>
+        <ion-navbar>
+            <!--<ion-buttons start>-->
+            <!--<button class="light-color" ion-button (click)="dismiss()">بستن</button>-->
+            <!--</ion-buttons>-->
+            <ion-title class="light-color">دستگاه های ورودی</ion-title>
+        </ion-navbar>
+    </ion-header>
+    <ion-card>
+        <ion-card-header (click)="cardSelection('vera')">
+            <ion-card-title>
+                {{'devices.'+selectedDevice.name.substr(0,3)|translate}}{{selectedDevice.name.substr(selectedDevice.name.indexOf('_'),selectedDevice.name.length)}}
+            </ion-card-title>
+        </ion-card-header>
+
+
+        <ion-card-content class="auto-input-device">
+            <form>
+                <div class="row device" *ngFor="let option of selectedInputOptions">
+                    <div class="col-9">
+                        <p class="light-color">{{option.name}}</p>
+                    </div>
+                    <div class="col-3">
+                        <ion-toggle class="pull-right" name="activate" [(ngModel)]="option.is_active"></ion-toggle>
+                    </div>
+                    <div class="col-12" *ngIf="(selectedDevice.name.substr(0,3)=='SPD'&&(option.template==5||option.template==6))||
+                        (selectedDevice.name.substr(0,3)=='TRM'&&(option.template==2||option.template==7))">
+                        <ion-row>
+                            <ion-col width-50>
+                                <ion-input type="number" class="tw-font" name="value"
+                                           [(ngModel)]="option.arguments[0].value"></ion-input>
+                            </ion-col>
+                            <ion-col width-50>
+                                <h3 *ngIf="selectedDevice.name.substr(0,3)=='SPD'" class="waat" >Waat</h3>
+                                <h3 *ngIf="selectedDevice.name.substr(0,3)=='TRM'" class="waat" >℃</h3>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                </div>
+            </form>
+
+        </ion-card-content>
+        <ion-row class="save-cancel-box">
+            <ion-col width-50 class="cancel">
+                <button type="button" class="danger-button-dark" (click)="dismiss(null)">لغو</button>
+            </ion-col>
+            <ion-col width-50 class="save">
+                <button type="button" class="success-button-dark" (click)="sendFeedBack()">ذخیره</button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+
+</ion-content>

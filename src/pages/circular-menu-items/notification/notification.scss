@@ -1,0 +1,76 @@
+@import "../../../assets/css/common-style";
+
+page-notification {
+  .notify-page {
+    margin-bottom: 10vh;
+  }
+  .no-notification-box {
+    min-height: 10vh;
+    h3 {
+      direction: rtl;
+      color: $light;
+      text-align: center;
+    }
+  }
+  .date-time {
+    margin-right: 0px;
+    color: $mito-orange-clr;
+    text-align: center;
+  }
+
+  .side-notify {
+    height: auto;
+    margin-right: 5px;
+    border-left: 1px solid #ececec;
+  }
+
+  .main-content-notify {
+    border-right: solid 1px $light;
+    height: auto;
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .circle {
+    width: 7vh;
+    height: 7vh;
+    border: .8vmin dotted #f86149;
+    border-radius: 100%;
+    text-align: center;
+    padding-top: 1.4vh;
+    margin: 2vh auto auto;
+    color: $light;
+  }
+  .event-id {
+    font-size: 3vmin;
+    border: .8vw solid #f86149;
+    padding: 0 0 1px 4px;
+    width: 10%;
+    float: right;
+    margin: 4vh 0 0;
+    clear: right;
+  }
+  .gray-color {
+    color: #828282;
+    border: 1.5px dotted #828282;
+  }
+  .notify-device-name {
+    width: 100%;
+    float: right;
+    direction: rtl;
+    color: $light;
+    margin-right: 10px;
+    text-align: right;
+
+  }
+  .notify-message {
+    direction: rtl;
+    color: $light;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+  .device-title {
+    border-bottom: solid 1px $light;
+  }
+}

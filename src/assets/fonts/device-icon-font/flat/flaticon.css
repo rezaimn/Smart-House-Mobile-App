@@ -1,0 +1,71 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 13/09/2017 08:29
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-flat-001-safebox:before { content: "\f100"; }
+.flaticon-flat-002-thermostat:before { content: "\f101"; }
+.flaticon-flat-003-window:before { content: "\f102"; }
+.flaticon-flat-004-computer:before { content: "\f103"; }
+.flaticon-flat-005-router:before { content: "\f104"; }
+.flaticon-flat-006-water:before { content: "\f105"; }
+.flaticon-flat-007-oven:before { content: "\f106"; }
+.flaticon-flat-008-server:before { content: "\f107"; }
+.flaticon-flat-009-coffee-machine:before { content: "\f108"; }
+.flaticon-flat-010-blender:before { content: "\f109"; }
+.flaticon-flat-011-air-conditioner:before { content: "\f10a"; }
+.flaticon-flat-012-vision:before { content: "\f10b"; }
+.flaticon-flat-013-microwave:before { content: "\f10c"; }
+.flaticon-flat-014-sun:before { content: "\f10d"; }
+.flaticon-flat-015-snowflake:before { content: "\f10e"; }
+.flaticon-flat-016-toilet:before { content: "\f10f"; }
+.flaticon-flat-017-trash:before { content: "\f110"; }
+.flaticon-flat-018-shower:before { content: "\f111"; }
+.flaticon-flat-019-socket:before { content: "\f112"; }
+.flaticon-flat-020-plug-1:before { content: "\f113"; }
+.flaticon-flat-021-faucet:before { content: "\f114"; }
+.flaticon-flat-022-fire-alarm:before { content: "\f115"; }
+.flaticon-flat-023-cctv-1:before { content: "\f116"; }
+.flaticon-flat-024-cctv:before { content: "\f117"; }
+.flaticon-flat-025-washing-machine:before { content: "\f118"; }
+.flaticon-flat-026-lamp-1:before { content: "\f119"; }
+.flaticon-flat-027-lamp:before { content: "\f11a"; }
+.flaticon-flat-028-cloud-computing:before { content: "\f11b"; }
+.flaticon-flat-029-doorbell:before { content: "\f11c"; }
+.flaticon-flat-030-thermometer:before { content: "\f11d"; }
+.flaticon-flat-031-plug:before { content: "\f11e"; }
+.flaticon-flat-032-remote-control:before { content: "\f11f"; }
+.flaticon-flat-033-refrigerator:before { content: "\f120"; }
+.flaticon-flat-034-idea:before { content: "\f121"; }
+.flaticon-flat-035-smartphone:before { content: "\f122"; }
+.flaticon-flat-036-home-3:before { content: "\f123"; }
+.flaticon-flat-037-home-2:before { content: "\f124"; }
+.flaticon-flat-038-home-1:before { content: "\f125"; }
+.flaticon-flat-039-garage:before { content: "\f126"; }
+.flaticon-flat-040-home:before { content: "\f127"; }

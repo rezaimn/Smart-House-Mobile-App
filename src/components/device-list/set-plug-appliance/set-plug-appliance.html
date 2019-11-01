@@ -1,0 +1,77 @@
+<ion-content>
+    <form>
+        <ion-row>
+            <ion-col>
+                <ion-input
+                        name="search-input" class="search-input"
+                        type="text"
+                        placeholder='جستجو'
+                        (ionChange)="getAllApplianceBySearch($event)"
+                ></ion-input>
+            </ion-col>
+            <ion-col>
+                <ion-select
+                        [(ngModel)]="selectedApplianceType"
+                        interface="action-sheet" name="appliance-types"
+                        (ionChange)="getAllApplianceBySearch()"
+                >
+                    <ion-option value="0">همه لوازم خانگی</ion-option>
+                    <ion-option *ngFor="let applianceType of applianceTypes" [value]="applianceType.id">
+                        {{applianceType.faName}}
+                    </ion-option>
+                </ion-select>
+            </ion-col>
+        </ion-row>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>همه لوازم خانگی</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <div class="appliance-list">
+                    <div class="row" >
+                        <div class="col-6" *ngFor="let appliance of applianceList">
+                                <span>
+                                   <ion-checkbox (click)="addRemoveApplianceToSelectedAppliances(appliance)" [checked]="isApplianceAttachedToPlug(appliance)"></ion-checkbox>
+                               </span>
+                               <span>
+                                   <ion-label class="light-color tw-font">{{appliance.brandModel}}</ion-label>
+                               </span>
+
+                        </div>
+                    </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>لوازم خانگی انتخاب شده</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <div class="selected-appliance-list">
+                    <div class="row" >
+                        <div class="col-6" *ngFor="let appliance of selectedAppliancesObj">
+                            <span>
+                                   <ion-checkbox (click)="addRemoveApplianceToSelectedAppliances(appliance)" [checked]="isApplianceAttachedToPlug(appliance)"></ion-checkbox>
+                            </span>
+                            <span>
+                                   <ion-label class="light-color tw-font">{{appliance.brandModel}}</ion-label>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+
+
+        <ion-row class="save-cancel-box card-container" >
+
+            <ion-col width-50 class="cancel">
+                <button type="button" class="danger-button-dark" (click)="cancelSetAppliance()">لغو</button>
+            </ion-col>
+            <ion-col width-50 class="save">
+                <button type="button" class="success-button-dark" (click)="setAppliance()">ذخیره</button>
+            </ion-col>
+        </ion-row>
+    </form>
+</ion-content>

@@ -1,0 +1,43 @@
+@import "../../assets/css/common-style";
+battery-status {
+  ion-card{
+    background-color: $dark-background;
+  }
+  .battery-low{
+    background-color:$battery-low-color ;
+  }
+  .battery-mid{
+    background-color:$battery-mid-color ;
+  }
+  .battery-high{
+    background-color:$battery-high-color ;
+  }
+  .battery-low-text{
+    color:$battery-low-color ;
+  }
+  .battery-mid-text{
+    color:$battery-mid-color ;
+  }
+  .battery-high-text{
+    color:$battery-high-color ;
+  }
+  .battery-percentage{
+    margin-top: -14px;
+    text-align: center;
+    font-family: tw-regular;
+    font-size: 16px;
+  }
+  .battery-level-show{
+    position: relative;
+    top: -13px;
+    right: -3px;
+    width: 73%;
+    p{
+      height: 10px;
+    }
+  }
+  img{
+    height: 16px;
+    width: auto;
+  }
+}

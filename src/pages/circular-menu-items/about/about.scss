@@ -1,0 +1,67 @@
+@import "../../../assets/css/common-style";
+page-about {
+  .about-power-img {
+    margin: auto;
+    display: flex;
+    height: 8vh;
+    //margin-top:5vh
+  }
+
+  .about-data {
+    margin-right: 0px;
+    margin-left: 0px;
+    p {
+      text-align: center;
+      color: $light;
+      margin-top: 5vh;
+      width: 100%;
+      font-size: 2rem;
+    }
+  }
+
+  .mito-img {
+    display: flex;
+    margin: 4vh auto auto;
+  }
+
+
+  .top-img {
+    height: 12vh;
+    margin: 4.5vh auto auto;
+    display: flex;
+    //border-radius: 50%;
+  }
+
+  .phone {
+    color: $mito-orange-clr !important;
+    text-align: center;
+    font-size: 4vmin;
+    margin-top: 1vh;
+    font-family: tw-regular;
+  }
+
+  .email {
+    margin-top: 1vh;
+    margin-bottom: 2vh !important;
+    text-align: center;
+    color: $mito-orange-clr;
+    font-size: 5vmin;
+    font-family: tw-regular;
+  }
+
+  .site {
+    margin-top: 5vh;
+    text-align: center;
+    color: $mito-orange-clr;
+    font-size: 6vmin;
+    font-family:tw-regular ;
+  }
+
+  .copy-right {
+    margin-top: 1vh;
+    text-align: center;
+    color: $mito-orange-clr;
+    font-size: 4vmin;
+    font-family: tw-regular;
+  }
+}

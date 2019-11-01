@@ -1,0 +1,29 @@
+<div class="menu">
+
+    <button #menuButton class="cn-button" (click)="homeSelected()">
+        <span *ngIf="openedBtnText!=''">{{isNavOpened ? openedBtnText : closedBtnText}}</span>
+        <img class="home-icon" src="./assets/imgs/circular-tabs/home-dark.png"
+             *ngIf="openedBtnIconName!=''&&!homeIsSelected"/>
+        <img class="home-icon" src="./assets/imgs/circular-tabs/home-dark-selected.png"
+             *ngIf="openedBtnIconName!=''&&homeIsSelected"/>
+
+    </button>
+    <div class="cn-wrapper" [@menu]="isNavOpened?'open':'close'" (blur)="toggleNav()">
+        <ul #list>
+            <li *ngFor='let tab of tabRef._tabs;let tabIndex = index' (click)="selectTab(tabIndex,tab)">
+                <a [class.selected]="tab.isSelected">
+
+					<span *ngIf="tab.tabTitle" [class.selected]="tab.isSelected">
+                         <p  class="notification-count" *ngIf="localData.notificationsCount>0 && tab.tabIcon=='notification'">{{localData.notificationsCount}}</p>
+                        {{tab.tabTitle}}
+                    </span>
+                    <ion-icon *ngIf="tab.tabIcon" [class.selected]="tab.isSelected" [isActive]="tab.isSelected"
+                              [name]="tab.tabIcon">
+                    </ion-icon>
+                    <!--<ion-badge  [color]="tab.tabBadgeStyle " style="height: 20px">11</ion-badge>-->
+                </a>
+                <div class="button-effect "></div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+@import "../../../assets/css/common-style";
+
+page-modes {
+  .mode-item {
+    height: 140px;
+    width: 140px;
+    margin: 10px;
+    i {
+      color: $light;
+    }
+    p {
+      color: $light;
+      font-size: 18px;
+    }
+    .fa-plane {
+        font-size: 74px;
+    }
+    .fa-car {
+      font-size: 60px;
+    }
+    .fa-home {
+      font-size: 78px;
+    }
+    .fa-bed {
+      margin-top: 26%;
+      font-size: 60px;
+    }
+  }
+  .col-6 {
+    padding: 0px;
+  }
+  .modes-container {
+    margin-top: 35%;
+  }
+
+  ion-card {
+    text-align: center;
+    align-content: center;
+    align-self: center;
+    i {
+      text-align: center;
+      align-content: center;
+      align-self: center;
+      margin-top: 18%;
+    }
+  }
+  .selected-mode{
+      color: $mito-orange-clr!important;
+  }
+}

@@ -1,0 +1,163 @@
+@import "../../../../assets/css/common-style";
+
+page-add-scenario {
+  .auto-input-device{
+    height: 70vh;
+    overflow-y: auto;
+    margin-bottom:5vh;
+    .item{
+      background-color: transparent!important;
+      border-bottom: 1px solid $input-border;
+      border-top: 1px solid $input-border;
+    }
+    .list-md{
+      margin-bottom: 0px!important;
+    }
+  }
+.output-device{
+  .item-inner{
+    direction: ltr;
+  }
+}
+  ion-step-header .ionic-step-header-icon {
+    margin: 2vw;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 5vh;
+    position: absolute;
+    top: 8%;
+    background-color: $input-border;
+    span {
+      font-family: tw-regular;
+      font-size: 2rem;
+    }
+  }
+  .ionic-stepper-horizontal-line{
+    margin-top: 1vh;
+  }
+  .ionic-vertical-content {
+    padding-right: 0px;
+    padding-left: 0px;
+    h3 {
+      text-align: center;
+      margin-top: 0vh;
+      color: $mito-orange-clr;
+    }
+
+  }
+  .next-arrow {
+    position: absolute;
+    bottom: 8.5vh;
+    right: 6vw;
+    font-size: 4rem;
+    color: $mito-orange-clr;
+  }
+  .previous-arrow {
+    position: absolute;
+    bottom: 8.5vh;
+    left: 6vw;
+    font-size: 4rem;
+    color: $mito-orange-clr;
+  }
+  .selected-mode {
+    color: $mito-orange-clr !important;
+  }
+  .mode-item {
+    height: 45px;
+    width: 45px;
+    i {
+      color: $light;
+    }
+    p {
+      color: $light;
+      font-size: 18px;
+    }
+    .fa {
+      display: flex;
+      margin: auto;
+    }
+    .fa-th-large {
+      font-size: 3rem;
+    }
+    .fa-plane {
+      font-size: 3.2rem;
+    }
+    .fa-car {
+      font-size: 2.6rem;
+    }
+    .fa-home {
+      font-size: 3.2rem;
+    }
+    .fa-bed {
+      margin-top: 5%;
+      font-size: 2.6rem;
+    }
+    .fa-bed:before{
+      padding-top: 1vh;
+    }
+  }
+  .col-2, .col-1 {
+    padding: 0px;
+  }
+  .execute-mode-item {
+    height: 7vh;
+    border: solid 2px $mito-orange-clr;
+    i {
+      font-size: 2.8rem;
+      color: $light;
+      position: absolute;
+      top: 20%;
+      left: 35%;
+    }
+  }
+
+  .device-name{
+    color: $mito-orange-clr;
+    text-align: right!important;
+    direction: rtl!important;
+    width: 100%;
+  }
+  .scenario-name{
+    direction: rtl;
+    text-align: right;
+  }
+  .text-input-md {
+    margin: 0px;
+    text-align: center;
+  }
+  .radio-btns {
+    ion-col{
+      padding: 0px;
+    }
+    ion-label {
+      text-align: center;
+      color: $mito-orange-clr;
+      font-size: 1.2rem;
+      margin-top: 2px;
+      margin-left: 0px;
+      margin-bottom: 5px;
+    }
+    ion-radio {
+      margin-left: 9vw;
+    }
+  }
+  .button-not-selected{
+    border: 2px solid $input-border;
+    border-radius: 1vh;
+    color:$light;
+    background-color: $card-dark-back;
+    margin-top: 5px;
+    width: 100%;
+    padding: 3px 1px;
+    font-size: 1.2rem;
+  }
+
+  .button-selected{
+    border: 2px solid $mito-orange-clr;
+    color:$mito-orange-clr;
+  }
+  .col-3,.col-2{
+    padding-right: 5px!important;
+    padding-left: 5px!important;
+  }
+}

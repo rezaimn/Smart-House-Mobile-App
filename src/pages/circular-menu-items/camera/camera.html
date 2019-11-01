@@ -1,0 +1,13 @@
+
+
+
+<ion-content padding  >
+<ion-card *ngFor="let camera of cameraList">
+  <ion-card-header>
+    <h3>{{camera.camera.name}}</h3>
+  </ion-card-header>
+  <ion-card-content>
+    <img [src]="camera.feed">
+  </ion-card-content>
+</ion-card>
+</ion-content>

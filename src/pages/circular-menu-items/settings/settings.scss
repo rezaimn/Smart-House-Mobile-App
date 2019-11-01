@@ -1,0 +1,25 @@
+@import "../../../assets/css/common-style";
+
+page-settings {
+  .user-profile {
+    ion-row {
+      padding: 0px;
+    }
+    ion-col{
+      float: right;
+      padding-left: 5px;
+      padding-right: 5px;
+      input{
+        direction: rtl;
+      }
+    }
+    .edge-radio{
+      width: 100%;
+    }
+  }
+  .select-edge{
+    text-align: right;
+    color: #fff;
+    margin: 13px 8px 13px 8px;
+  }
+}

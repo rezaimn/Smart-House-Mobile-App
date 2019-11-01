@@ -1,0 +1,292 @@
+[
+  {
+    "device_type": "DWS",
+    "input_services": [
+      {
+        "is_active":false,
+        "name": "هنگامی که بسته و مسلح باشد",
+        "enabled": 1,
+        "template": 4,
+        "arguments": []
+      },
+      {
+        "is_active":false,
+        "name": "هنگامی که باز و مسلح باشد",
+        "enabled": 1,
+        "template": 3,
+        "arguments": []
+      }
+    ],
+    "output_services": [
+      {
+        "is_active":false,
+        "is_used":false,
+        "deviceId":0,
+        "name": "",
+        "service": " urn:micasaverde-com:serviceId:SecuritySensor1",
+        "action":"SetArmed",
+        "arguments": [
+          {
+            "name": "newArmedValue",
+            "value": 1
+          }
+        ]
+      }
+
+    ]
+  },
+  {
+    "device_type": "GBS",
+    "input_services": [
+      {
+        "is_active":false,
+        "name": "هنگامی که مسلح باشد و شیشه بشکند/بلرزد",
+        "enabled": 1,
+        "template": 1,
+        "arguments": []
+      },
+      {
+        "is_active":false,
+        "name": "هنگامی که مسلح باشد و لرزش شیشه متوقف شود",
+        "enabled": 1,
+        "template": 2,
+        "arguments": []
+      }
+    ],
+    "output_services": [
+      {
+        "is_active":false,
+        "is_used":false,
+        "deviceId":0,
+        "name": "",
+        "service": "urn:micasaverde-com:serviceId:SecuritySensor1",
+        "action":"SetArmed",
+        "arguments": [
+          {
+            "name": "newArmedValue",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "device_type": "MDS",
+    "input_services": [
+      {
+        "is_active":false,
+        "name": "هنگامی که مسلح باشد و حرکت تشخیص داده شود",
+        "enabled": 1,
+        "template": 3,
+        "arguments": []
+      },
+      {
+        "is_active":false,
+        "name": "هنگامی که مسلح باشد و تشخیص حرکت متوقف شود",
+        "enabled": 1,
+        "template": 4,
+        "arguments": []
+      }
+    ],
+    "output_services": [
+      {
+        "is_active":false,
+        "is_used":false,
+        "deviceId":0,
+        "name": "",
+        "service": "urn:micasaverde-com:serviceId:SecuritySensor1",
+        "action":"SetArmed",
+        "arguments": [
+          {
+            "name": "newArmedValue",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "device_type": "SPD",
+    "input_services": [
+      {
+        "is_active":false,
+        "name": "هنگامی که خاموش شود",
+        "enabled": 1,
+        "template": 1,
+        "arguments": [
+          {
+            "id": 1,
+            "value": 0
+          }
+        ]
+      },
+      {
+        "is_active":false,
+        "name": "هنگامی که روشن شود",
+        "enabled": 1,
+        "template": 1,
+        "arguments": [
+          {
+            "id": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "is_active":false,
+        "name": "هنگامی که مصرف انرژی بیشتر از مقدار زیر شود",
+        "enabled": 1,
+        "template": 5,
+        "arguments": [
+          {
+            "id": 1,
+            "value": 0
+          }
+        ]
+      },
+      {
+        "is_active":false,
+        "name": "هنگامی که مصرف انرژی کمتر از مقدار زیر شود",
+        "enabled": 1,
+        "template": 6,
+        "arguments": [
+          {
+            "id": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "output_services": [
+      {
+        "is_active":false,
+        "is_used":false,
+        "deviceId":0,
+        "name": "",
+        "service": "urn:upnp-org:serviceId:SwitchPower1",
+        "action":"SetTarget",
+        "arguments": [
+          {
+            "name": "newTargetValue",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "device_type": "SDS",
+    "input_services": [
+      {
+        "is_active":false,
+        "name": "هنگامی که مسلح باشد و دود تشخیص داده شود",
+        "enabled": 1,
+        "template": 3,
+        "arguments": []
+      },
+      {
+        "is_active":false,
+        "name": "هنگامی که مسلح باشد و تشخیص دود متوقف شود",
+        "enabled": 1,
+        "template": 4,
+        "arguments": []
+      }
+    ],
+    "output_services": [
+      {
+        "is_active":false,
+        "is_used":false,
+        "deviceId":0,
+        "name": "",
+        "service": "urn:micasaverde-com:serviceId:SecuritySensor1",
+        "action":"SetArmed",
+        "arguments": [
+          {
+            "name": "newArmedValue",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "device_type": "TRM",
+    "input_services": [
+      {
+        "is_active":false,
+        "name": "هنگامی که دما بیشتر از مقدار زیر شود",
+        "enabled": 1,
+        "template": 2,
+        "arguments": [
+          {
+            "id": 1,
+            "value": 0
+          }
+        ]
+      },
+      {
+        "is_active":false,
+        "is_used":false,
+        "name": "هنگامی که دما کمتر از مقدار زیر شود",
+        "enabled": 1,
+        "template": 7,
+        "arguments": [
+          {
+            "id": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "output_services": [
+
+    ]
+  },
+  {
+    "device_type": "WLS",
+    "input_services": [
+      {
+        "is_active":false,
+        "name": "هنگامی که مسلح باشد و نشت آب تشخیص داده شود",
+        "enabled": 1,
+        "template": 3,
+        "arguments": [
+
+        ]
+      },
+      {
+        "is_active":false,
+        "name": "هنگامی که مسلح باشد و تشخیص نشت آب متوقف شود",
+        "enabled": 1,
+        "template": 4,
+        "arguments": [
+
+        ]
+      }
+    ],
+    "output_services": [
+      {
+        "is_active":false,
+        "is_used":false,
+        "deviceId":0,
+        "name": "",
+        "service": "urn:micasaverde-com:serviceId:SecuritySensor1",
+        "action":"SetArmed",
+        "arguments": [
+          {
+            "name": "newArmedValue",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "device_type": "CMR",
+    "input_services": [
+
+    ],
+    "output_services": [
+    ]
+  }
+]

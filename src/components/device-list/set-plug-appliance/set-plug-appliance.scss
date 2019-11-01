@@ -1,0 +1,43 @@
+@import "../../../assets/css/common-style";
+
+set-plug-appliance {
+  .search-input {
+    text-align: right;
+  }
+  .appliance-list{
+    direction: rtl;
+    span{
+      float: right;
+    }
+    overflow-y: auto;
+    height: 40vh;
+    .checkbox{
+      margin: 9px 4px 9px 14px!important;
+    }
+    ion-col{
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    ion-label{
+      margin: 5px 0px 0px;
+    }
+  }
+  .selected-appliance-list{
+    direction: rtl;
+    span{
+      float: right;
+    }
+    overflow-y: auto;
+    height: 12vh;
+    .checkbox{
+      margin: 9px 4px 9px 14px!important;
+    }
+    ion-col{
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    ion-label{
+      margin: 5px 0px 0px;
+    }
+  }
+}

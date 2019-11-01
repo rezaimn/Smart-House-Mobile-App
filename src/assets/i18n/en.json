@@ -1,0 +1,36 @@
+{
+  "dir": "ltr",
+  "lang_name": "English",
+  "iso": "en",
+  "id": 1,
+  "shared": {
+
+  },
+  "devices": {
+    "WLS":"Water Leak",
+    "SPD":"Smart Plug",
+    "SRD":"Smart Switch",
+    "SDS":"Smoke Detector",
+    "DWS":"Window Contact",
+    "SRN":"Siren",
+    "TRM":"Thermostat",
+    "LTN":"Lighting",
+    "PKS":"Parking Sensor",
+    "CMR":"Camera",
+    "ACD":"Access Control",
+    "DSP":"Display",
+    "KIS":"Kiosk",
+    "MDS":"Motion Detect",
+    "GBS":"Glass Break"
+  },
+  "rooms":{
+    "Living":"Living Room",
+    "Bedroom":"Bedroom",
+    "Kitchen":"Kitchen",
+    "Dining":"Dining",
+    "Bathroom":"Bathroom",
+    "Study":"Study",
+    "Passage":"Passage"
+  }
+
+}

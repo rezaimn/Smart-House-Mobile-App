@@ -1,0 +1,26 @@
+<ion-content>
+  <div class="row modes-container">
+    <div class=" col-6 ">
+      <ion-card class="mode-item float-right">
+        <i class="fa fa-plane" [ngClass]="{'selected-mode':mode==4}" (click)="changeMode(4)"></i>
+      </ion-card>
+    </div>
+    <div class=" col-6 ">
+      <ion-card class="mode-item float-left">
+        <i class="fa fa-car" [ngClass]="{'selected-mode':mode==2}" (click)="changeMode(2)"></i>
+      </ion-card>
+    </div>
+    <div class=" col-6 ">
+      <ion-card class="mode-item float-right">
+        <i class="fa fa-bed" [ngClass]="{'selected-mode':mode==3}" (click)="changeMode(3)"></i>
+      </ion-card>
+    </div>
+    <div class=" col-6 ">
+      <ion-card class="mode-item float-left">
+        <i class="fa fa-home "  [ngClass]="{'selected-mode':mode==1}" (click)="changeMode(1)"></i>
+      </ion-card>
+    </div>
+
+  </div>
+
+</ion-content>

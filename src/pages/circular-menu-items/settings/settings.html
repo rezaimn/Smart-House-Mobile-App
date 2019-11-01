@@ -1,0 +1,161 @@
+<ion-content>
+    <ion-card>
+        <ion-card-header (click)="cardSelection('language')">
+            <span *ngIf="selectedCard=='language'&&!selectedCardClosed"
+                  class="fa  fa-angle-up card-toggle"></span>
+            <span *ngIf="selectedCard!='language'||(selectedCard=='language'&&selectedCardClosed)"
+                  class="fa  fa-angle-down card-toggle"></span>
+            <ion-card-title>تنظیمات زبان</ion-card-title>
+        </ion-card-header>
+        <ion-card-content [ngStyle]="toggleCard('language')">
+            <ion-list radio-group>
+                <ion-item>
+                    <ion-label>فارسی</ion-label>
+                    <ion-radio value="فارسی" checked="true"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>انگلیسی</ion-label>
+                    <ion-radio value="انگلیسی"></ion-radio>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header (click)="cardSelection('theme')">
+            <span *ngIf="selectedCard=='theme'&&!selectedCardClosed"
+                  class="fa  fa-angle-up card-toggle"></span>
+            <span *ngIf="selectedCard!='theme'||(selectedCard=='theme'&&selectedCardClosed)"
+                  class="fa  fa-angle-down card-toggle"></span>
+            <ion-card-title>تنظیمات قالب</ion-card-title>
+        </ion-card-header>
+        <ion-card-content [ngStyle]="toggleCard('theme')">
+            <ion-list radio-group>
+
+                <ion-item>
+                    <ion-label>تاریک</ion-label>
+                    <ion-radio value="تاریک" checked="true"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>روشن</ion-label>
+                    <ion-radio value="روشن"></ion-radio>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header (click)="cardSelection('notification')">
+            <span *ngIf="selectedCard=='notification'&&!selectedCardClosed"
+                  class="fa  fa-angle-up card-toggle">
+            </span>
+            <span *ngIf="selectedCard!='notification'||(selectedCard=='notification'&&selectedCardClosed)"
+                  class="fa  fa-angle-down card-toggle">
+            </span>
+            <ion-card-title>تنظیمات اعلان</ion-card-title>
+        </ion-card-header>
+        <ion-card-content [ngStyle]="toggleCard('notification')">
+            <form>
+                <ion-item>
+                    <ion-label class="light-color">دریافت ایمیل</ion-label>
+                    <ion-checkbox name="sendEmail" (ngModelChange)="setSendEmail(sendEmail)" [(ngModel)]="sendEmail"  ></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                    <ion-label class="light-color">دریافت پیامک</ion-label>
+                    <ion-checkbox name="sendSMS"  (ngModelChange)="setSendSMS(sendSMS)" [(ngModel)]="sendSMS"   ></ion-checkbox>
+                </ion-item>
+            </form>
+
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header (click)="cardSelection('vera')">
+            <span *ngIf="selectedCard=='vera'&&!selectedCardClosed"
+                  class="fa  fa-angle-up card-toggle">
+            </span>
+            <span *ngIf="selectedCard!='vera'||(selectedCard=='vera'&&selectedCardClosed)"
+                  class="fa  fa-angle-down card-toggle">
+            </span>
+            <ion-card-title>انتخاب کنترلر</ion-card-title>
+        </ion-card-header>
+        <ion-card-content [ngStyle]="toggleCard('vera')">
+            <ion-list radio-group class="edge-radio" name="edges"
+                      [ngModel]="localData.selectedEdge.serialNumber" (ionChange)="changeCurrentEdge($event)">
+                <ion-item *ngFor="let edge of localData.accountData.edges;let i=index">
+                    <ion-label>{{edge.name}}</ion-label>
+                    <ion-radio [value]="edge.serialNumber"></ion-radio>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="card-container">
+        <ion-card-header (click)="cardSelection('profile')">
+             <span *ngIf="selectedCard=='profile'&&!selectedCardClosed"
+                   class="fa  fa-angle-up card-toggle">
+            </span>
+            <span *ngIf="selectedCard!='profile'||(selectedCard=='profile'&&selectedCardClosed)"
+                  class="fa  fa-angle-down card-toggle">
+            </span>
+            <ion-card-title>تنظیمات حساب کاربری</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="user-profile" [ngStyle]="toggleCard('profile')">
+            <form>
+                <ion-row>
+                    <ion-col>
+                        <ion-input [disabled]="!profileEditMode" name="username"
+                                   [(ngModel)]="localData.accountData.username" type="text"
+                                   placeholder='نام کاربری'></ion-input>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-input [disabled]="!profileEditMode" name="firstName"
+                                   [(ngModel)]="localData.accountData.firstName" type="text"
+                                   placeholder='نام'></ion-input>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-input [disabled]="!profileEditMode" name="lastName"
+                                   [(ngModel)]="localData.accountData.lastName" type="text"
+                                   placeholder='نام خانوادگی'></ion-input>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-input class="tw-font" [disabled]="!profileEditMode" name="ssn" [(ngModel)]="localData.accountData.ssn"
+                                   type="text" placeholder='شماره ملی'></ion-input>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-input class="tw-font" [disabled]="!profileEditMode" name="mobileNumber"
+                                   [(ngModel)]="localData.accountData.mobileNumber" type="text"
+                                   placeholder='شماره تلفن'></ion-input>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-input class="tw-font" [disabled]="!profileEditMode" name="email" [(ngModel)]="localData.accountData.email"
+                                   type="text" placeholder='ایمیل'></ion-input>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class="save-cancel-box">
+                    <ion-col width-100 class="edit" *ngIf="!profileEditMode">
+                        <button type="button" class="primary-button-dark" (click)="changeProfileEditMode(true)">ویرایش
+                        </button>
+                    </ion-col>
+                    <!--<ion-col width-50 style="text-align: right" *ngIf="!profileEditMode">-->
+
+                    <!--</ion-col>-->
+                    <ion-col width-50 class="cancel" *ngIf="profileEditMode">
+                        <button type="button" class="danger-button-dark" (click)="cancelUpdateUser()">لغو</button>
+                    </ion-col>
+                    <ion-col width-50 class="save" *ngIf="profileEditMode">
+                        <button type="button" class="success-button-dark" (click)="updateUserProfile()">ذخیره</button>
+                    </ion-col>
+                </ion-row>
+            </form>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

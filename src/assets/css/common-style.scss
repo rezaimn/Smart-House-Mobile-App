@@ -1,0 +1,299 @@
+@import "../../theme/variables";
+@import "../../assets/fonts/device-icon-font/cool/flaticon.css";
+//@import "../../assets/fonts/device-icon-font/flat/flaticon.css";
+//body{
+//  direction: rtl;
+//}
+.float-right{
+  float: right;
+}
+.float-left{
+  float: left;
+}
+.tw-font{
+  font-family: tw-regular;
+}
+.scroll-content{
+  padding-right: 3vw;
+  padding-left: 3vw;
+  padding-top: 6vh!important;
+  padding-bottom: 7vh!important;
+  //direction: rtl;
+}
+.row{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.toggle-md .toggle-icon{
+  background-color: $battery-low-color;
+}
+.toggle-md.toggle-checked .toggle-icon{
+  background-color: $battery-high-color;
+}
+.toggle-md.toggle-checked .toggle-inner{
+  background-color: $light;
+}
+.toolbar-background-md{
+  background: $dark;
+}
+ion-content{
+  font-family: Yekan;
+}
+.toolbar-md{
+  min-height: 6vh!important;
+
+}
+ion-footer{
+  left: 3%;
+  bottom: 1vh;
+  border-radius: 100px;
+  width: 94%;
+  ion-toolbar{
+    border-radius: 100px;
+  }
+  .toolbar-background-md{
+    background: rgba(255,255,255,.3);
+  }
+}
+.primary-color{
+  color:$primary;
+}
+.danger-color{
+  color: $danger;
+}
+.warning-color{
+  color:$warning;
+}
+.success-color{
+  color:$success;
+}
+.light-color{
+  color:$light;
+}
+.dark-color{
+  color:$dark;
+}
+//////////////////////buttons
+
+
+.manage-button-dark{
+  color: $dark-text-color;
+  background-color: $mito-orange-clr;
+  border-radius: 5px;
+  border: solid 2px $mito-orange-clr;
+  padding: 0px 2px 2px 2px;
+  min-width: 18vw;
+  font-size: 1.4rem;
+}
+
+///////////////////////////////////success-button
+.success-button-dark{
+  color: $light;
+  background-color: $success;
+  border-radius: 5px;
+  border: solid 2px $success;
+  padding: 0px 2px 2px 2px;
+  min-width: 18vw;
+  font-size: 1.4rem;
+}
+///////////////////////////////////danger-button
+.danger-button-dark{
+  color: $light;
+  background-color: $danger;
+  border-radius: 5px;
+  border: solid 2px $danger;
+  padding: 0px 2px 2px 2px;
+  min-width: 18vw;
+  font-size: 1.4rem;
+}
+
+///////////////////////////////////primary-button
+.primary-button-dark{
+  color: $light;
+  background-color: $primary;
+  border-radius: 5px;
+  border: solid 2px $primary;
+  padding: 0px 2px 2px 2px;
+  min-width: 18vw;
+  font-size: 1.4rem;
+}
+
+
+
+button:focus{
+  outline: transparent;
+}
+ion-select{
+  height: 40px;
+  background-color:transparent;
+  color: $mito-orange-clr;
+  font-size: 1.6rem;
+  font-family: Yekan;
+  text-align: center;
+  max-width: 100%;
+  border-bottom: 1px solid $input-border;
+  padding: 8px 16px 8px 8px!important;
+  ion-option{
+    background-color:transparent;
+    color: $mito-orange-clr;
+    font-size: 1.6rem;
+    font-family: Yekan;
+    text-align: center;
+  }
+}
+.action-sheet-md .action-sheet-group .button-inner{
+  color:  $mito-orange-clr;
+  font-family: Yekan;
+  justify-content: center;
+}
+.action-sheet-md .action-sheet-group{
+  .action-sheet-cancel .button-inner{
+    font-family: tw-regular;
+  }
+  background: $card-dark-back;
+}
+.select-md .select-icon .select-icon-inner{
+  color:$mito-orange-clr;
+}
+ion-input{
+  background-color:transparent;
+  color: $mito-orange-clr;
+  font-size: 1.6rem;
+  border-bottom: 1px solid $input-border;
+  .text-input-md {
+    margin: 8px 8px;
+  }
+  height: 40px;
+}
+
+/* outline: 1px dotted; */
+/* outline: 5px auto -webkit-focus-ring-color; */
+
+.no-padding{
+  padding: 0px;
+}
+.no-margin{
+  margin: 0px;
+}
+
+.validation-error{
+  color: $danger;
+  text-align: right;
+  margin-right: 20px;
+  font-size: 1.2rem;
+}
+.box-border{
+  padding: 10px 5px;
+  border-radius: 1vh;
+  border: 2px solid;
+  margin-top: 1vh;
+}
+.notification-count{
+  width: 30px;
+  height: 18px;
+  background-color: $danger;
+  color: $light;
+  border-radius: 20px;
+  font-family: tw-regular;
+  font-size: 1.2rem;
+  margin-left: 45%;
+  position: absolute;
+  top: -2vh;
+  text-align: center;
+}
+//////////////////////////////card
+.card-container{
+  margin-bottom: 14vh!important;
+}
+.card{
+  background: $card-dark-back;
+  border-radius: 1vh;
+  width: 100%;
+  padding:0px 0px 0px 0px;
+  margin: 10px 0px 10px;
+}
+ion-card-content{
+  padding: 13px 0px!important;
+}
+.card-md{
+  h3{
+    direction: rtl;
+    text-align: center;
+    color: $mito-orange-clr;
+  }
+}
+.card-header{
+  background-color:$dark ;
+  margin-bottom: 1.5vh;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.card-title-md{
+  font-size: 1.6rem;
+  color: $mito-orange-clr;
+  text-align: center;
+}
+.card-header{
+
+}
+.card-title{
+  margin-bottom: 0px;
+  font-size: 1.6rem;
+  color: $mito-orange-clr;
+  text-align: center;
+}
+.card-toggle{
+  color: $light;
+  float: right;
+  margin-top: 1vh;
+  font-size: 2.4rem;
+}
+///////////////////////radio group
+.item-radio-checked ion-label {
+  color: $mito-orange-clr!important;
+}
+
+.item-radio  ion-label {
+  margin-right: 0;
+  direction: rtl;
+  color: $light;
+}
+ion-item{
+  direction: rtl;
+  background-color: transparent!important;
+  ion-label{
+    color: $light;
+  }
+}
+ion-radio .radio-checked {
+  border-color: $mito-orange-clr!important;
+  .radio-inner{
+    background-color: $mito-orange-clr!important;
+  }
+}
+ion-radio{
+  border-color: $light;
+  .radio-inner{
+    background-color: $light;
+  }
+}
+.item-md.item-block .item-inner{
+  border: 0px;
+}
+ion-navbar.toolbar{
+  padding-right: 4vw;
+}
+.save-cancel-box{
+  .edit{
+    text-align: center;
+  }
+  .cancel{
+    text-align: right;
+  }
+  .save{
+    text-align: left;
+  }
+}
+ion-step-header .ionic-step-header-icon-active{
+  background-color:$mito-orange-clr!important ;
+}

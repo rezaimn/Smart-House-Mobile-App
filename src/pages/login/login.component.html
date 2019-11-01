@@ -1,0 +1,44 @@
+<ion-content padding class="login-bg">
+    <form [formGroup]="loginForm" novalidate (ngSubmit)="signIn()">
+
+        <ion-item class="login-logo-base">
+            <img src="./assets/imgs/mobile-logo.png" class="login-logo">
+        </ion-item>
+        <ion-item class="user-name login-input form-group">
+            <ion-label stacked>نام کاربری</ion-label>
+            <ion-input
+                    formControlName="userName"
+            ></ion-input>
+        </ion-item>
+        <div *ngIf="loginData.username.touched&&loginData.username.dirty" class="form-control-error">
+            <p *ngIf="loginData.username.errors?.required" class="validation-error">نام کاربری را وارد کنید</p>
+        </div>
+        <ion-item class="password login-input form-group">
+            <ion-label stacked>کلمه عبور</ion-label>
+            <ion-input
+                    type="password"
+                    formControlName="password"
+            ></ion-input>
+        </ion-item>
+        <div *ngIf="loginData.password?.touched&&loginData.password?.dirty" class="form-control-error">
+            <p *ngIf="loginData.password.errors?.required" class="validation-error">کلمه عبور را وارد کنید</p>
+            <p *ngIf="loginData.password.errors?.minlength" class="validation-error">حداقل 8 کاراکتر</p>
+        </div>
+        <ion-item class="remember-me form-group">
+            <ion-label>مرا بخاطر بسپار</ion-label>
+            <ion-checkbox
+                    formControlName="rememberMe"
+                    (ionChange)="rememberMeChange()"
+            ></ion-checkbox>
+        </ion-item>
+        <div text-center margin-top>
+            <button ion-button class="sign-in-button" type="submit">
+                ورود
+            </button>
+        </div>
+        <!--<ion-item class="forget-password" (click)="forgetPassword()">-->
+            <!--<ion-label>کلمه عبور را فراموش کرده ام</ion-label>-->
+        <!--</ion-item>-->
+    </form>
+</ion-content>
+

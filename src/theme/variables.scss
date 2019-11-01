@@ -1,0 +1,119 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+@import "bootstrap";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: rtl;
+
+$battery-low-color: #c62d2a;
+$battery-mid-color: #eea504;
+$battery-high-color: #05a814;
+
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+$mito-orange-clr:#f9961e;
+$mito-dark-clr:#153956;
+$dark-background:#111111;
+$card-dark-back: #333333;
+$light:#f4f4f4;
+$input-border:#9c9a98;
+$dark-text-color:#010813;
+$dark-background-color:#111;
+$light-text-color:#f9961e;
+$light-background-color:#eee;
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222
+);
+$primary: #2a79a8;
+$success: #059112;
+$danger: #aa2724;
+$light: #f4f4f4;
+$dark: #222;
+$warning: #eea504;
+.content-md{
+  background-color: $dark-background!important;
+}
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+
+
+
+// Fonts
+// --------------------------------------------------
+@import "font-awesome";
+$font-path: "../assets/fonts";
+@font-face {
+
+  font-family: 'tw-regular';
+  src: url('../assets/fonts/tw-regular/TwCenMT-Condensed.eot');
+  src: url('../assets/fonts/tw-regular/TwCenMT-Condensed.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/tw-regular/TwCenMT-Condensed.woff2') format('woff2'), url('../assets/fonts/tw-regular/TwCenMT-Condensed.woff') format('woff'), url('../assets/fonts/tw-regular/TwCenMT-Condensed.svg#TwCenMT-Condensed') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Yekan';
+  src: url('../assets/fonts/Yekan/yekan.eot');
+  src: url('../assets/fonts/Yekan/yekan.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/Yekan/yekan.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

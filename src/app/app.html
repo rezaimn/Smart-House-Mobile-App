@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+<div class="main-container">
+  <ion-tabs #myTabs  [hidden]="!localData.userIsLoggedIn">
+    <ion-tab [root]="modesCtrl" tabTitle="حالت ها" tabIcon="modes" ></ion-tab>
+    <ion-tab [root]="notificationCtrl"  tabTitle="اعلان ها" tabIcon="notification"></ion-tab>
+    <ion-tab [root]="aboutCtrl" tabTitle="درباره ما" tabIcon="about"></ion-tab>
+    <ion-tab [root]="cameraCtrl" tabTitle="دوربین" tabIcon="camera" ></ion-tab>
+    <ion-tab [root]="devicesCtrl" tabTitle="دستگاه ها" tabIcon="devices" ></ion-tab>
+    <ion-tab [root]="exitCtrl" tabTitle="خروج" tabIcon="exit" ></ion-tab>
+    <ion-tab [root]="scenarioCtrl" tabTitle="سناریو" tabIcon="scenario" ></ion-tab>
+    <ion-tab [root]="settingsCtrl" tabTitle="تنظیمات" tabIcon="settings" ></ion-tab>
+  </ion-tabs>
+  <circular-tabs  [hidden]="hideCircularTabs || !localData.userIsLoggedIn" [tabRef]="myTabs" [totalAngle]="360" [gapAngle]="2" [startAngle]="90" [closeOnTabSelection]="false" [closeOnBlur]="true"
+                  [closedBtnIconName]="'apps'" [openedBtnIconName]="'close-circle'">
+  </circular-tabs>
+  <div class="circular-tabs-icon" [hidden]="!localData.userIsLoggedIn">
+    <img
+         [src]="hideCircularTabs ? './assets/imgs/circular-tabs/circular-tabs-dark.png':'./assets/imgs/circular-tabs/circular-tabs-dark-selected.png'"
+         (click)="circularTabsToggle()"/>
+    <p  class="notification-count" *ngIf="localData.notificationsCount>0 && hideCircularTabs">{{localData.notificationsCount}}</p>
+
+  </div>
+
+  <div [@routerAnimation]="getRouteAnimation(route)" style="height: 100%" [ngClass]="{'blur':!hideCircularTabs&&localData.userIsLoggedIn}">
+    <router-outlet #route="outlet"></router-outlet>
+  </div>
+
+</div>
+<!--<ion-footer>-->
+  <!--<ion-toolbar>-->
+    <!--<ion-title>-->
+
+    <!--</ion-title>-->
+  <!--</ion-toolbar>-->
+<!--</ion-footer>-->

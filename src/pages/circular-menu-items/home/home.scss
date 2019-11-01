@@ -1,0 +1,93 @@
+@import "../../../assets/css/common-style";
+
+page-home {
+  ion-content {
+    ion-slides {
+      height: 22vh;
+      background-color: $card-dark-back;
+      margin-top: 2vh;
+      .swiper-pagination-bullet {
+        background: $light;
+      }
+      .security {
+        ion-chip {
+          width: 100%;
+          margin-top: 3vh;
+          background: transparent!important;
+          ion-avatar {
+            height: 9vh;
+            margin-top: -1vh;
+            img {
+              border-radius: 0px;
+              display: unset;
+            }
+          }
+          p{
+            text-align: center;
+            width: 100%;
+          }
+        }
+      }
+      .device-status {
+        .slide-text {
+          text-align: center;
+          direction: rtl;
+          font-size: 1.2rem;
+        }
+        ion-avatar{
+          float: right;
+          height: 8vh;
+          margin-top: -2vh;
+          margin-bottom: 1vh;
+        }
+        .battery-status {
+            img {
+              float: left;
+              border-radius: 0px;
+            }
+        }
+        .out-of-service {
+            img {
+              float: right;
+              border-radius: 0px;
+            }
+        }
+      }
+    }
+    ion-scroll {
+      height: 4vh;
+    }
+  }
+  .slide-title {
+    color: $mito-orange-clr;
+    text-align: center;
+    font-size: 1.6rem;
+    position: absolute;
+    width: 100%;
+    top:1vh;
+  }
+  .slide-text {
+    color: $light;
+    text-align: right;
+    direction: rtl;
+    font-size: 1.4rem;
+    strong {
+      color: $battery-low-color;
+      width: auto;
+      padding-right: 10px;
+      padding-left: 10px;
+      text-align: center;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-family: tw-regular;
+      font-size: 1.8rem;
+      background: $light;
+      border-radius: 15px;
+    }
+  }
+  ion-avatar {
+    width: 100%;
+    height: 64px;
+    float: right;
+  }
+}
