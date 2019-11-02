@@ -10,8 +10,8 @@
 
 #Videos
 
-![alt text](./src/screen-records/1.gif) 
 
+![alt text](./src/screen-records/1.gif) 
 
 
 Read [this tutorial](https://leifwells.github.io/2017/08/27/testing-in-ionic-configure-existing-projects-for-testing/) for instructions on how to apply the testing configuration in this project to your own project. 
